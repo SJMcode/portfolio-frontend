@@ -1,0 +1,48 @@
+:root { --bs-primary: #277D76; --bs-secondary: #73A6AD; --bs-info: #C7B8EA; /* Optional: adjust text colors to match your minimalist style */ --bs-body-color: #111; --bs-body-bg: #ffffff; }
+/* ===== Global minimalist layout ===== */
+body { background: linear-gradient( to bottom, #C7B8EA 0%, #73A6AD 50%, #277D76 100% ); background-attachment: fixed; font-family: "Inter", system-ui, sans-serif; }
+
+/* Main content width */
+.portfolio {
+  width: 750px;
+  max-width: 90%;
+  line-height: 1.65;
+}
+
+/* ===== Experience & Projects ===== */
+.item {
+  margin-bottom: 30px;
+}
+
+.item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.item p {
+  margin: 4px 0;
+  font-size: 15px;
+  color: #444;
+}
+
+.item ul {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+
+.item ul li {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+
+/* ===== Links ===== */
+a {
+  color: #0056d6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
