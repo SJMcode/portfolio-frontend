@@ -1,4 +1,5 @@
-const API_BASE = "https://portfolio-backend-production-a869.up.railway.app";  // CORRECT
+const API_BASE = "https://portfolio-backend-production-e259.up.railway.app";  
+
 // // Change to https://api.smarteksolutions.se after deployment
 
 export async function getProfile() {
