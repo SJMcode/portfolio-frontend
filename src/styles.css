@@ -2,6 +2,21 @@
 /* ===== Global minimalist layout ===== */
 body { background: linear-gradient( to bottom, #C7B8EA 0%, #73A6AD 50%, #277D76 100% ); background-attachment: fixed; font-family: "Inter", system-ui, sans-serif; }
 
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 35px;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
 /* Main content width */
 .portfolio {
   width: 750px;
