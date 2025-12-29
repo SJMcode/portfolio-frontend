@@ -1,0 +1,66 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Triggers on push to main branch
+  push:
+    branches:
+      - main
+  
+  # Allows manual trigger from Actions tab
+  workflow_dispatch:
+
+# Sets permissions for GitHub Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Prevents multiple deployments running simultaneously
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. Checkout code from repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      # 2. Setup Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm ci
+      
+      # 4. Run linter (optional but good practice)
+      - name: Run ESLint
+        run: npm run lint
+        continue-on-error: true
+      
+      # 5. Build the project
+      - name: Build project
+        run: npm run build
+      
+      # 6. Setup GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      # 7. Upload build artifacts
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+      
+      # 8. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
