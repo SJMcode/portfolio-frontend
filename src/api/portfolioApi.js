@@ -1,5 +1,5 @@
-const API_BASE = "http://localhost:5016"; 
-// Change to https://api.smarteksolutions.se after deployment
+const API_BASE = "https://portfolio-backend-production-a869.up.railway.app";  // CORRECT
+// // Change to https://api.smarteksolutions.se after deployment
 
 export async function getProfile() {
   const res = await fetch(`${API_BASE}/api/profile`);
