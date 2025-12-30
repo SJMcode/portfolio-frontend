@@ -1,4 +1,4 @@
-const API_BASE = "https://portfolio-backend-production-e259.up.railway.app";  
+const API_BASE = "https://api.smarteksolutions.se";  
 
 // // Change to https://api.smarteksolutions.se after deployment
 
