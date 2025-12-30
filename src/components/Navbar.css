@@ -20,6 +20,22 @@
   text-decoration: none;
 }
 
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 35px;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
 .nav-item {
   text-decoration: none;
   color: var(--brand-dark);

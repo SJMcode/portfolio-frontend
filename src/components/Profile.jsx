@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProfile } from "../api/portfolioapi";
-
+import NeuralBackground from "./NeuralBackground";
 export default function Profile() {
   const [profile, setProfile] = useState(null);
 
@@ -13,7 +13,7 @@ export default function Profile() {
   return (
     <div className="container py-5">
       <div className="row align-items-center">
-        
+        <NeuralBackground />
         {/* LEFT SIDE — TEXT */}
         <div className="col-md-6">
           <h1 className="fw-bold" style={{ color: "#277D76" }}>
