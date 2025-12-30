@@ -12,7 +12,7 @@ export default function Skills() {
 
   return (
     <div className="portfolio">
-      <h2 className="section-title">Skills</h2>
+      <h2 className="section-title">Tech Stack</h2>
 
       <ul className="skills"> {skills.map((skill, index) => ( <li key={`${index}-${skill.name}`}>{skill.name}</li> ))} </ul>
     </div>
