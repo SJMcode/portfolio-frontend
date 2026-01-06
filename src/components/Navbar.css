@@ -13,28 +13,40 @@
   align-items: center;
 }
 
-.nav-logo {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--brand-primary);
-  text-decoration: none;
-}
-
-
+/* ===== Logo ===== */
 .nav-logo {
   display: flex;
   align-items: center;
+  gap: 4px;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.02em;
 }
 
-.logo-img {
-  height: 35px;
-  width: auto;
-  transition: transform 0.2s ease;
+/* </> part */
+.logo-code {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 20px;
+  color: var(--brand-secondary);
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
-.logo-img:hover {
-  transform: scale(1.05);
+/* SJ part */
+.logo-name {
+  color: var(--brand-primary);
 }
+
+/* Hover effect */
+.nav-logo:hover .logo-code {
+  color: var(--brand-primary);
+}
+
+.nav-logo:hover .logo-name {
+  color: var(--brand-dark);
+}
+
 
 .nav-item {
   text-decoration: none;
