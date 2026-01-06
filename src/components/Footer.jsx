@@ -22,7 +22,7 @@ export default function Footer()
 
     return (
         <footer style={{
-            padding: '3rem 2rem',
+            padding: '1.5rem 2rem',
             background: 'rgba(255, 255, 255, 0.05)',
             backdropFilter: 'blur(10px)',
             borderTop: '1px solid rgba(255, 255, 255, 0.1)',
@@ -37,7 +37,7 @@ export default function Footer()
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                gap: '1.5rem'
+                gap: '1rem'
             }}>
                 <div style={{
                     display: 'flex',
@@ -52,7 +52,7 @@ export default function Footer()
                         style={{
                             color: '#fff',
                             textDecoration: 'none',
-                            fontSize: '1rem',
+                            fontSize: '0.95rem',
                             fontWeight: 500,
                             transition: 'opacity 0.3s',
                             opacity: 0.8
@@ -69,7 +69,7 @@ export default function Footer()
                         style={{
                             color: '#fff',
                             textDecoration: 'none',
-                            fontSize: '1rem',
+                            fontSize: '0.95rem',
                             fontWeight: 500,
                             transition: 'opacity 0.3s',
                             opacity: 0.8
@@ -84,7 +84,7 @@ export default function Footer()
                         style={{
                             color: '#fff',
                             textDecoration: 'none',
-                            fontSize: '1rem',
+                            fontSize: '0.95rem',
                             fontWeight: 500,
                             transition: 'opacity 0.3s',
                             opacity: 0.8
@@ -97,8 +97,30 @@ export default function Footer()
                 </div>
 
                 <div style={{
-                    fontSize: '0.9rem',
-                    opacity: 0.6,
+                    width: '100%',
+                    maxWidth: '300px',
+                    height: '120px',
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                    opacity: 0.9
+                }}>
+                    <iframe
+                        title="My Location"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32578.41160456185!2d17.994348560027733!3d59.32353073707204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f763119640db1%3A0x400f91343710720!2sStockholm%2C%20Sweden!5e0!3m2!1sen!2sse!4v1715012345678!5m2!1sen!2sse"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                </div>
+
+                <div style={{
+                    fontSize: '0.8rem',
+                    opacity: 0.4,
                     fontWeight: 400
                 }}>
                     &copy; {currentYear} Safir. All rights reserved.

@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { getSkills } from "../api/portfolioapi";
 
-export default function Skills() {
+export default function Skills()
+{
   const [skills, setSkills] = useState(null);
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     getSkills().then(setSkills);
   }, []);
 
@@ -13,8 +15,13 @@ export default function Skills() {
   return (
     <div className="portfolio">
       <h2 className="section-title">Tech Stack</h2>
-
-      <ul className="skills"> {skills.map((skill, index) => ( <li key={`${index}-${skill.name}`}>{skill.name}</li> ))} </ul>
+      <div className="skills-container">
+        {skills.map((skill, index) => (
+          <span className="skill-badge" key={`${index}-${skill.name}`}>
+            {skill.name}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }
