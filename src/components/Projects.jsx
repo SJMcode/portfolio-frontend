@@ -19,8 +19,8 @@ export default function Projects()
       };
 
       const languageUnlearnProject = {
-        title: "LanguageUnlearn (IELTS Prep)",
-        description: "A comprehensive language learning platform specifically designed for IELTS preparation, featuring dedicated modules for Listening, Reading, Writing, and Speaking (LRWS) with interactive exercises.",
+        title: "LanguageUnlearn",
+        description: "A comprehensive language learning platform specifically designed for English, German, French featuring dedicated modules for Listening, Reading, Writing, and Speaking (LRWS) with interactive exercises.",
         techStack: "React, TypeScript, CSS",
         gitHubUrl: "https://github.com/SJMcode/LanguageUnlearn"
       };
