@@ -14,6 +14,14 @@ export default function NeuralNetwork()
     const width = mountRef.current.clientWidth;
     const height = mountRef.current.clientHeight;
 
+    console.log('NeuralBackground mounting with dimensions:', { width, height });
+
+    if (width === 0 || height === 0)
+    {
+      console.warn('NeuralBackground: Invalid dimensions, skipping render');
+      return;
+    }
+
     const scene = new THREE.Scene();
     scene.background = null;
 
@@ -30,9 +38,10 @@ export default function NeuralNetwork()
       renderer.setClearColor(0x000000, 0);
       renderer.setSize(width, height);
       mountRef.current.appendChild(renderer.domElement);
+      console.log('NeuralBackground: WebGL renderer initialized successfully');
     } catch (e)
     {
-      console.warn("WebGL not supported, falling back to static background.");
+      console.warn("WebGL not supported, falling back to static background.", e);
       return;
     }
 
@@ -121,6 +130,7 @@ export default function NeuralNetwork()
     };
 
     animate();
+    console.log('NeuralBackground: Animation started');
 
     const handleResize = () =>
     {
@@ -136,6 +146,7 @@ export default function NeuralNetwork()
 
     return () =>
     {
+      console.log('NeuralBackground: Cleaning up');
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationIdRef.current);
       nodeGeometry.dispose();
@@ -161,7 +172,8 @@ export default function NeuralNetwork()
         position: 'absolute',
         top: 0,
         left: 0,
-        pointerEvents: 'none'
+        pointerEvents: 'none',
+        zIndex: 1
       }}
     />
   );
