@@ -3,6 +3,7 @@ import "./styles.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 import Profile from "./components/Profile";
 import Experience from "./components/Experience";
@@ -15,18 +16,20 @@ export default function App()
 {
   return (
     <ThemeProvider>
-      <HashRouter>
-        <Navbar />
+      <LanguageProvider>
+        <HashRouter>
+          <Navbar />
 
-        <Routes>
-          <Route path="/" element={<Profile />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Profile />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
 
-        <Footer />
-      </HashRouter>
+          <Footer />
+        </HashRouter>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

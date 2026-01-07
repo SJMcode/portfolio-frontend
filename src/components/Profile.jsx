@@ -2,12 +2,17 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getProfile } from "../api/portfolioapi";
 import NeuralBackground from "./NeuralBackground";
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useLanguage } from "../contexts/LanguageContext";
+import { useTranslation } from "../translations/translations";
 
 export default function Profile()
 {
   const [profile, setProfile] = useState(null);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const navigate = useNavigate();
+  const { language } = useLanguage();
+  const t = useTranslation(language);
 
   useEffect(() =>
   {
@@ -35,17 +40,21 @@ export default function Profile()
             >
               ×
             </button>
-            <h2 className="modal-title">Get in Touch</h2>
+            <h2 className="modal-title">{t('profile.getInTouch')}</h2>
             <div className="modal-body">
-              <p><strong>Email:</strong> <a href={`mailto:${profile.email || 'safir.jameel@gmail.com'}`}>{profile.email || 'safir.jameel@gmail.com'}</a></p>
-              <p><strong>Phone:</strong> {profile.phone || '+46 707217399'}</p>
-              {profile.location && <p><strong>Location:</strong> {profile.location}</p>}
+              <p><strong>{t('profile.email')}:</strong> <a href={`mailto:${profile.email || 'safir.jameel@gmail.com'}`}>{profile.email || 'safir.jameel@gmail.com'}</a></p>
+              <p><strong>{t('profile.phone')}:</strong> {profile.phone || '+46 707217399'}</p>
+              {profile.location && <p><strong>{t('profile.location')}:</strong> {profile.location}</p>}
               <hr className="modal-divider" />
               <div className="social-links">
-                <a href="https://linkedin.com/in/safir-jameel" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://github.com/sjmcode" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://linkedin.com/in/safir-jameel" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin /> LinkedIn
+                </a>
+                <a href="https://github.com/sjmcode" target="_blank" rel="noopener noreferrer">
+                  <FaGithub /> GitHub
+                </a>
               </div>
-              <p className="modal-note">Searching for remote | Hybrid opportunities.</p>
+              <p className="modal-note">{t('profile.searchingFor')}</p>
             </div>
           </div>
         </div>
@@ -72,20 +81,20 @@ export default function Profile()
               className="btn-primary"
               onClick={() => navigate('/projects')}
             >
-              View Projects
+              {t('profile.viewProjects')}
             </button>
             <button
               className="btn-secondary"
               onClick={() => setIsContactModalOpen(true)}
             >
-              Contact Me
+              {t('profile.contactMe')}
             </button>
           </div>
 
           {/* About Section */}
           <div className="about-card animate-slide-up delay-4">
-            <h3>About Me</h3>
-            <p>{profile.about || 'I’m a Full-Stack .NET Developer passionate about building scalable and reliable web applications. My skill set includes C#, ASP.NET, React, TypeScript, Tailwind CSS, and Azure services. I currently work remotely at Brototype, contributing to end-to-end web solutions. I hold a Master of Science in Computer and Systems Sciences and am based in Sweden.'}</p>
+            <h3>{t('profile.aboutMe')}</h3>
+            <p>{profile.about || t('profile.aboutText')}</p>
           </div>
         </div>
       </div>

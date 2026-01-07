@@ -1,20 +1,24 @@
 import { useEffect, useState } from "react";
 import { getExperience } from "../api/portfolioapi";
+import { useLanguage } from "../contexts/LanguageContext";
+import { useTranslation } from "../translations/translations";
 
 export default function Experience()
 {
-  const [experience, setExperience] = useState(null);
+  const [experience, setExperience] = useState([]);
+  const { language } = useLanguage();
+  const t = useTranslation(language);
 
   useEffect(() =>
   {
     getExperience().then(setExperience);
   }, []);
 
-  if (!experience) return <div className="portfolio">Loading...</div>;
+  if (!experience.length) return <div className="loading-state">{t('experience.loading')}</div>;
 
   return (
     <div className="portfolio">
-      <h2 className="section-title">Experience</h2>
+      <h2 className="section-title">{t('experience.title')}</h2>
 
       <div className="experience-timeline">
         {experience.map((job, index) => (

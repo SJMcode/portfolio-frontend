@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useTranslation } from '../translations/translations';
 
 export default function Footer()
 {
     const currentYear = new Date().getFullYear();
     const [viewCount, setViewCount] = useState(null);
+    const { language } = useLanguage();
+    const t = useTranslation(language);
 
     useEffect(() =>
     {
@@ -24,9 +29,15 @@ export default function Footer()
         <footer className="footer">
             <div className="footer-content">
                 <div className="footer-links">
-                    <a href="https://github.com/sjmcode" target="_blank" rel="noopener noreferrer" className="footer-link">GitHub</a>
-                    <a href="https://linkedin.com/in/safir-jameel" target="_blank" rel="noopener noreferrer" className="footer-link">LinkedIn</a>
-                    <a href="mailto:safir.jameel@gmail.com" className="footer-link">Email</a>
+                    <a href="https://github.com/sjmcode" target="_blank" rel="noopener noreferrer" className="footer-link">
+                        <FaGithub /> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/safir-jameel" target="_blank" rel="noopener noreferrer" className="footer-link">
+                        <FaLinkedin /> LinkedIn
+                    </a>
+                    <a href="mailto:safir.jameel@gmail.com" className="footer-link">
+                        <FaEnvelope /> Email
+                    </a>
                 </div>
 
                 <div className="map-container">
@@ -49,7 +60,7 @@ export default function Footer()
                 {/* Round Visitor Counter Button */}
                 {viewCount !== null && (
                     <div className="visitor-counter">
-                        <span className="visitor-label">VIEWS</span>
+                        <span className="visitor-label">{t('footer.views')}</span>
                         {viewCount.toLocaleString()}
                     </div>
                 )}

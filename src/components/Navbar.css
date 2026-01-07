@@ -18,6 +18,12 @@
   align-items: center;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 /* ===== Logo ===== */
 .nav-logo {
   display: flex;
@@ -90,6 +96,46 @@
   .nav-item {
     font-size: 0.9rem;
   }
+}
+
+/* Language Selector */
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  transition: all 0.3s ease;
+  opacity: 0.5;
+}
+
+.lang-btn.active {
+  opacity: 1;
+  color: var(--bs-info);
+}
+
+.lang-btn:hover {
+  opacity: 1;
+}
+
+.lang-divider {
+  color: #fff;
+  opacity: 0.3;
+  font-size: 0.9rem;
 }
 
 /* Theme Toggle Slide Switch */

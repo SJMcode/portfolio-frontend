@@ -356,6 +356,13 @@ body {
   font-weight: 500;
   opacity: 0.6;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-link svg {
+  font-size: 1.2rem;
 }
 
 .footer-link:hover {
@@ -509,6 +516,13 @@ body {
 .social-links a {
   font-weight: 600;
   font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-links a svg {
+  font-size: 1.3rem;
 }
 
 .modal-note {
